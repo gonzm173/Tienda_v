@@ -7,4 +7,75 @@ and open the template in the editor.
     Created on : May 26, 2022, 6:28:44 PM
     Author     : Aurelio
 */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
 
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif; 
+}
+
+.container{
+    height: 120vh;
+    width: 100%;
+    background-image: url(../images/background.png);
+    backround-position:center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 160px;
+    cursor: pointer;
+}
+
+nav{
+    flex: 1;
+    padding-left: 60px;
+}
+
+/*para cambiar posicion de enlaces*/
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin:0px 20px;
+}
+
+/*para eliminar el subrayado de los hipervinculos*/
+nav ul li a{
+    text-decoration: none;
+    color:darkchid;   
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin-top:24px;
+    margin-bottom: 15px;
+    color:darkchid;     
+}
+
+.content p{
+    font-size: 20px;
+    color:blueviolet;
+}
+
+
+/*mover la imagen*/
+.feature-img{
+    height: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 160px;
+}
