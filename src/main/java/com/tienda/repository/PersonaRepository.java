@@ -15,8 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author Aurelio
  */
 @Repository
-public interface PersonaRepository extends CrudRepository<Persona,Long>{
+public interface PersonaRepository extends CrudRepository<Persona, Long> {
 
-
-    
+    Persona findByNombre(String nombre);
 }

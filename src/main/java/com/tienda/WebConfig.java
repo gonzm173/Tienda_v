@@ -16,7 +16,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 /**
  *
- * @author Golcher
+ * @author Aurelio
 */
 
 @Configuration

@@ -1,16 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.controller;
 
 import com.tienda.entity.Pais;
 import com.tienda.entity.Persona;
-import com.tienda.repository.PaisRepository;
 import com.tienda.service.IPaisService;
 import com.tienda.service.IPersonaService;
-import com.tienda.service.PaisService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +26,7 @@ public class PersonaController {
 
     @Autowired
     private IPersonaService personaService;
+
     @Autowired
     private IPaisService paisService;
 
@@ -54,8 +52,8 @@ public class PersonaController {
         return "redirect:/persona";
     }
 
-    @GetMapping("/editPersona")
-    public String editPersona(@PathVariable("id") Long idPersona, Model model) {
+    @GetMapping("/editPersona/{id}")
+    public String editarPersona(@PathVariable("id") Long idPersona, Model model) {
         Persona persona = personaService.getPersonaById(idPersona);
         List<Pais> listaPaises = paisService.listCountry();
         model.addAttribute("persona", persona);
@@ -63,9 +61,9 @@ public class PersonaController {
         return "crear";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete/{id}") //eliminar elemento
     public String eliminarPersona(@PathVariable("id") Long idPersona) {
-         personaService.delete(idPersona);
+        personaService.delete(idPersona);
         return "redirect:/persona";
     }
 }
